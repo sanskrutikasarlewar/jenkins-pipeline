@@ -1,2 +1,1 @@
-# maven-demo
-build maven send artifact to s3 
+Jenkins PIPELINE push artifact to s3 bucket
