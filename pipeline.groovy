@@ -39,11 +39,11 @@ pipeline {
                     export AWS_ACCESS_KEY_ID=AKIA3UOQDMGBAAXDP2YX
                     export AWS_SECRET_ACCESS_KEY=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
                     export AWS_DEFAULT_REGION=us-west-2
-                    aws s3 cp s3://artifact11-bucket-builder/student-${BUILD_ID}.war /home/ec2-user/
+                    aws s3 cp s3://artifact11-bucket-builder/student-${BUILD_ID}.war .
                     curl -O https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.69/bin/apache-tomcat-9.0.69.tar.gz
                     sudo tar -xzvf apache-tomcat-9.0.69.tar.gz -C /opt/
                     sudo sudo chmod 777 /opt/apache-tomcat-9.0.69/*  && sudo chown ec2-user: /opt/apache-tomcat-9.0.69/*
-                    sudo cp -rv /opt/student-${BUILD_ID}.war studentapp.war
+                    sudo cp -rv student-${BUILD_ID}.war studentapp.war
                     sudo cp -rv studentapp.war /opt/apache-tomcat-9.0.69/webapps/
                     sudo sh /opt/apache-tomcat-9.0.69/bin/startup.sh
                 '''
