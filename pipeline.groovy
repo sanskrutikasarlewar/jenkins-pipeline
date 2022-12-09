@@ -13,7 +13,7 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        //stage('artifact-to-s3') {
+        stage('artifact-to-s3') {
             steps {
                 withAWS(credentials: 'key', region: 'us-east-2') {
                 sh 'sudo apt update -y'
