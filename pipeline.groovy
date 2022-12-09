@@ -13,7 +13,7 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        stage('artifact-to-s3') {
+        //stage('artifact-to-s3') {
             steps {
                 withAWS(credentials: 'key', region: 'us-east-2') {
                 sh 'sudo apt update -y'
@@ -28,7 +28,7 @@ pipeline {
                 } 
             }
         }
-        stage('deploy-to-tomcat-server') {
+       // stage('deploy-to-tomcat-server') {
             steps {
             withCredentials([sshUserPrivateKey(credentialsId: 'jeet', keyFileVariable: 'tommy', usernameVariable: 'mohit')]) {
                 sh'''
