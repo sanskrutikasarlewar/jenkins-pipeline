@@ -1,5 +1,7 @@
 pipeline {
-    agent node-agent
+    agent {
+        node ('node-agent')
+    }
     stages {
         stage('code-pull') {
             steps{
