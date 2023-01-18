@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        node ('node-agent')
+        label ('ECS-LABEL')
     }
     stages {
         stage('code-pull') {
