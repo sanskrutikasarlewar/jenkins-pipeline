@@ -1,6 +1,7 @@
 pipeline {
-    agent {
-        label ('ECS-LABEL')
+    agent any {
+        git branch: 'main', credentialsId: 'Admin', url: 'git@github.com:sanskrutikasarlewar/jenkins-pipeline.git'
+        //label ('ECS-LABEL')
     }
     stages {
         stage('code-pull') {
