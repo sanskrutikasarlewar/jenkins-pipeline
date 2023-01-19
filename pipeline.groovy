@@ -1,11 +1,9 @@
 pipeline {
-    agent any {
-        git branch: 'main', credentialsId: 'Admin', url: 'git@github.com:sanskrutikasarlewar/jenkins-pipeline.git'
-        //label ('ECS-LABEL')
-    }
+    agent any 
     stages {
         stage('code-pull') {
             steps{
+                git branch: 'main', credentialsId: 'Admin', url: 'git@github.com:sanskrutikasarlewar/jenkins-pipeline.git'
                sh 'echo "code-pull"'
                sh 'echo "Hello"'
             
