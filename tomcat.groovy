@@ -5,7 +5,7 @@ pipeline {
     stages{
         stage('code-pull') {
             steps {
-             git credentialsId: 'sk', url: 'https://github.com/sanskrutikasarlewar/student-ui.git'
+             //git credentialsId: 'sk', url: 'https://github.com/sanskrutikasarlewar/student-ui.git'
                 sh '''
                 sudo apt update -y
                 sudo apt install git -y
