@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'tomcat-server'
+        label ('ECS1'))
     }
     stages{
         stage('code-pull') {
