@@ -6,7 +6,7 @@ pipeline {
         stage('code-pull') {
             steps {
                
-                sh 'sudo apt-get update -y'
+                // sh 'sudo apt-get update -y'
                 sh 'sudo apt-get install git -y'
                 git 'https://github.com/sanskrutikasarlewar/student-ui.git'
             }
