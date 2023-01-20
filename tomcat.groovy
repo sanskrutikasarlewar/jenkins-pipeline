@@ -5,11 +5,12 @@ pipeline {
     stages{
         stage('code-pull') {
             steps {
-               // git credentialsId: 'sk', url: 'https://github.com/sanskrutikasarlewar/student-ui.git'
+               
                 sh '''
                 sudo apt-get update -y
                 sudo apt-get install git -y
                 '''
+                git 'https://github.com/sanskrutikasarlewar/student-ui.git'
             }
         }
         stage('code-build') {
