@@ -1,8 +1,7 @@
 pipeline {
-    agent any
-    //{
-      //  label ('ECS1')
-    //}
+    agent {
+       label ('ECS1')
+    }
     stages{
         stage('code-pull'){
             steps {
