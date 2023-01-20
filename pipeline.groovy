@@ -5,7 +5,7 @@ pipeline {
     stages{
         stage('code-pull'){
             steps {
-               git branch: '*/master', credentialsId: 'sk', url: 'git@github.com:sanskrutikasarlewar/student-ui.git'
+              git credentialsId: 'sk', url: 'https://github.com/sanskrutikasarlewar/student-ui.git'
                 echo "Hello"
             }
         }
