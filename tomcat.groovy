@@ -1,14 +1,12 @@
 pipeline {
     agent {
-        label ('ECS1')
+        node ('bigboss-agent')
     }
     stages{
         stage('code-pull') {
             steps {
-               
-                // sh 'sudo apt-get update -y'
-                sh 'apt-get install git -y'
-                git 'https://github.com/sanskrutikasarlewar/student-ui.git'
+                sh 'sudo apt-get update -y'
+                sh 'sudo apt-get install git -y'
             }
         }
         stage('code-build') {
