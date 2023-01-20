@@ -5,7 +5,7 @@ pipeline {
     stages{
         stage('code-pull'){
             steps {
-                git credentialsId: 'ssh-key', url: 'git@github.com:mohit-decoder/student-ui.git'
+                git branch: 'main', credentialsId: 'sk', url: 'git@github.com:sanskrutikasarlewar/jenkins-pipeline.git'
                 echo "Hello"
             }
         }
