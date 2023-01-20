@@ -7,15 +7,15 @@ pipeline {
             steps {
                
                 // sh 'sudo apt-get update -y'
-                sh 'sudo apt-get install git -y'
+                sh 'apt-get install git -y'
                 git 'https://github.com/sanskrutikasarlewar/student-ui.git'
             }
         }
         stage('code-build') {
             steps {
-                sh ''' sudo apt-get update -y
-                sudo apt-get install maven -y
-                 sudo mvn clean package
+                sh '''apt-get update -y
+                apt-get install maven -y
+                mvn clean package
                  '''
             }
         } 
