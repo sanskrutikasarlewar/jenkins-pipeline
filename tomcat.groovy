@@ -11,7 +11,8 @@ pipeline {
         }
         stage('code-build') {
             steps {
-                sh '''sudo apt-get update -y
+                sh '''
+                sudo apt-get update -y
                 sudo apt-get install maven -y
                 mvn clean package
                  '''
