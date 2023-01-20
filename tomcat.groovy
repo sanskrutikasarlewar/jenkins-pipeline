@@ -5,7 +5,7 @@ pipeline {
     stages{
         stage('code-pull') {
             steps {
-                git credentialsId: 'sk', url: 'https://github.com/sanskrutikasarlewar/student-ui.git'
+               // git credentialsId: 'sk', url: 'https://github.com/sanskrutikasarlewar/student-ui.git'
                 sh '''
                 sudo apt-get update -y
                 sudo apt-get install git -y
@@ -14,8 +14,8 @@ pipeline {
         }
         stage('code-build') {
             steps {
-                sh ''' sudo apt update -y
-                sudo apt install maven -y
+                sh ''' sudo apt-get update -y
+                sudo apt-get install maven -y
                  sudo mvn clean package
                  '''
             }
