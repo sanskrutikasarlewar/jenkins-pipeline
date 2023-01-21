@@ -35,9 +35,11 @@ pipeline {
         }
         stage('tomcat-server-build'){
             steps{
-                withCredentials([sshUserPrivateKey(credentialsId: 'bigboss-agent', keyFileVariable: 'tomcat', usernameVariable: 'ubuntu')]) {
+                withCredentials([sshUserPrivateKey(credentialsId: 'tommy', keyFileVariable: 'tommy', passphraseVariable: 'tommy', usernameVariable: 'ubuntu')]) {
+
                     sh '''
-                    ssh -i ${tomcat} -o StrictHostKeyChecking=no ${ubuntu}@13.54.95.223
+                    ssh -i ${tommy} -o StrictHostKeyChecking=no ${ubuntu}@13.54.95.223
+                    
                     '''
                 }
             }
