@@ -41,6 +41,10 @@ pipeline {
                     ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@54.206.228.25<<EOF
                     sudo apt-get update -y
                     ls /
+                    sudo apt-get install unzip git -y
+                    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+                    unzip awscliv2.zip
+                    sudo ./aws/install
                     '''
                 }
             }
