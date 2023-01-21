@@ -45,14 +45,13 @@ pipeline {
                     #sudo ./aws/install
                     sudo apt-get install openjdk-11-jdk -y
                     aws s3 cp s3://student-app-artifact1/student-${BUILD_ID}.war .
-                    curl -O http://apache.mirrors.ionfish.org/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz
-                    sudo tar -xvf apache-tomcat-8.5.5.tar.gz -C /mnt/
-                    sudo sh /mnt/apache-tomcat-8.5.5/bin/shutdown.sh
-                    sudo cp -rv student-${BUILD_ID}.war studentapp
-                    sudo cp -rv studentapp /mnt/apache-tomcat-8.5.5.tar/webapp/
-                    sudo sh /mnt/apache-tomcat-8.5.5/bin/startup.sh
-
-
+                    cd /mnt/
+                    sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.zip
+                    sudo unzip apache-tomcat-8.5.85.zip
+                    sudo sh apache-tomcat-8.5.85/bin/shutdown.sh
+                    sudo cp -rv ./student-${BUILD_ID}.war ./studentapp
+                    sudo cp -rv ./studentapp /mnt/apache-tomcat-8.5.85/webapp/
+                    sudo sh apache-tomcat-8.5.85/bin/startup.sh
                     '''
                 }
             }
