@@ -16,7 +16,7 @@ pipeline {
                 sudo apt-get update -y
                 sudo apt-get install maven -y
                 mvn clean package
-                 '''
+                '''
             }
         }
         stage('copy-s3'){
@@ -27,7 +27,7 @@ pipeline {
                 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
                 unzip awscliv2.zip
                 sudo ./aws/install
-                #aws s3 cp s3://student-app-artifact1
+                aws s3 cp **/*.war s3://student-app-artifact1
                 '''
             }
         }
