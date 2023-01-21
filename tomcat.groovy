@@ -45,9 +45,9 @@ pipeline {
                     #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
                     #unzip awscliv2.zip
                     #sudo ./aws/install
-                    sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.zip -P /opt/
-                    sudo unzip /opt/apache-tomcat-9.0.70.zip -C .
-                    '''
+                    curl -O https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.tar.gz
+                    sudo tar -xvf apache-tomcat-8.5.85.tar.gz -C /opt/
+                                    '''
                 }
             }
         }
