@@ -37,7 +37,7 @@ pipeline {
             steps{
                 withCredentials([sshUserPrivateKey(credentialsId: 'bigboss-agent', keyFileVariable: 'tomcat', usernameVariable: 'ubuntu')]) {
                     sh'''
-                    ssh -i ${tomcat} ${ubuntu}@13.211.141.151
+                    ssh -i ${tomcat} -o StrictHostKeyChecking=no ${ubuntu}@13.211.141.151
                     sudo apt-get update -y
                     sudo apt-get install unzip -y
                     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
