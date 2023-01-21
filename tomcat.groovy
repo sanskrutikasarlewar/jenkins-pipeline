@@ -48,6 +48,7 @@ pipeline {
                     cd /mnt/
                     sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.zip
                     sudo unzip apache-tomcat-8.5.85.zip
+                    sudo chmod +x apache-tomcat-8.5.85/bin/*
                     sudo sh apache-tomcat-8.5.85/bin/shutdown.sh
                     sudo cp -rv ./student-${BUILD_ID}.war ./studentapp
                     sudo cp -rv ./studentapp /mnt/apache-tomcat-8.5.85/webapp/
