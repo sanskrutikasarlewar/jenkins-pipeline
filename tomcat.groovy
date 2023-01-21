@@ -27,8 +27,8 @@ pipeline {
                 #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
                 #unzip awscliv2.zip
                 #sudo ./aws/install
-                sudo mv /home/ubuntu/workspace/pipe/target/studentapp-2.2-SNAPSHOT.war /mnt/student-${BUILD_ID}.war
-                aws s3 cp /mnt/student-${BUILD_ID}.war s3://student-app-artifact1
+                sudo mv /home/ubuntu/workspace/pipe/target/studentapp-2.2-SNAPSHOT.war /tmp/student-${BUILD_ID}.war
+                aws s3 cp /tmp/student-${BUILD_ID}.war s3://student-app-artifact1 
                 '''
             }
         }
