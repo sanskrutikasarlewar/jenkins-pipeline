@@ -3,14 +3,14 @@ pipeline {
         node ('bigboss-agent')
     }
     stages{
-        stage('code-pull') {
+        stage('code-pull'){
             steps {
                 sh 'sudo apt-get update -y'
                 sh 'sudo apt-get install git -y'
                 git "https://github.com/sanskrutikasarlewar/student-ui.git"
             }
         }
-        stage('code-build') {
+        stage('code-build'){
             steps {
                 sh '''
                 sudo apt-get update -y
@@ -18,6 +18,17 @@ pipeline {
                 mvn clean package
                  '''
             }
-        } 
+        }
+        stage('Copy-S3'){
+            sh '''
+            sudo apt-get update -y
+            sudo apt-get install unzip -y
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
+            #aws s3 cp s3://student-app-artifact1
+            '''
+            
+        }
     }   
 }
