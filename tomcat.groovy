@@ -38,7 +38,7 @@ pipeline {
                 withCredentials([sshUserPrivateKey(credentialsId: 'tommy', keyFileVariable: 'tommy', usernameVariable: 'ubuntu')]) {
 
                     sh '''
-                    ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@13.54.95.223<<EOF
+                    ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@54.206.228.25<<EOF
                     sudo apt-get update -y
                     #sudo apt-get install unzip git -y
                     #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
