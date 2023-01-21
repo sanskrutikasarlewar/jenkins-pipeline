@@ -40,14 +40,14 @@ pipeline {
                     sh '''
                     ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@54.206.228.25<<EOF
                     sudo apt-get update -y
-                    #sudo apt-get install unzip git -y
-                    #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-                    #unzip awscliv2.zip
-                    #sudo ./aws/install
+                    sudo apt-get install unzip git -y
+                    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+                    unzip awscliv2.zip
+                    sudo ./aws/install
                     sudo apt-get install openjdk-11-jdk -y
                     aws s3 cp s3://student-app-artifact1/student-${BUILD_ID}.war .
-                    #sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.zip
-                    #sudo unzip apache-tomcat-8.5.85.zip /mnt/
+                    sudo wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.zip
+                    sudo unzip apache-tomcat-8.5.85.zip /mnt/
                     sudo chmod +x /mnt/apache-tomcat-8.5.85/bin/*
                     sudo sh /mnt/apache-tomcat-8.5.85/bin/shutdown.sh
                     sudo cp -rv student-${BUILD_ID}.war studentapp.war
