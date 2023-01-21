@@ -57,10 +57,10 @@ pipeline {
 
                     sh 'sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.zip -P /opt/'
                     sh 'sudo unzip /opt/apache-tomcat-9.0.70.zip -C .'
-                    aws s3 cp s3://student-app-artifact1/student-${BUILD_ID}.war .
-                    sudo cp -rv student-${BUILD_ID}.war studentapp.war
-                    sudo cp -rv studentapp.war /opt/apache-tomcat-9.0.70/webapps/
-                    sudo sh /opt/apache-tomcat-9.0.70/bin/startup.sh
+                    sh 'aws s3 cp s3://student-app-artifact1/student-${BUILD_ID}.war .'
+                    sh 'sudo cp -rv student-${BUILD_ID}.war studentapp.war'
+                    sh 'sudo cp -rv studentapp.war /opt/apache-tomcat-9.0.70/webapps/'
+                    sh 'sudo sh /opt/apache-tomcat-9.0.70/bin/startup.sh'
                 
                 }
             }
