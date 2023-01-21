@@ -36,8 +36,7 @@ pipeline {
         stage('tomcat-server-build'){
             steps{
                 withCredentials([sshUserPrivateKey(credentialsId: 'bigboss-agent', keyFileVariable: 'tomcat', usernameVariable: 'ubuntu')]) {
-                    sh 
-                    '''
+                    sh '''
                     ssh -i ${tomcat} -o StrictHostKeyChecking=no ${ubuntu}@13.54.95.223
                     sudo apt-get update -y
                     sudo apt-get install unzip git -y
