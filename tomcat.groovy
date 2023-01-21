@@ -41,11 +41,12 @@ pipeline {
                     ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@54.206.228.25<<EOF
                     sudo apt-get update -y
                     ls /
-                    sudo apt-get uninstall awscliv2
-                    sudo apt-get install unzip git -y
-                    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-                    unzip awscliv2.zip
-                    sudo ./aws/install
+                    #sudo apt-get install unzip git -y
+                    #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+                    #unzip awscliv2.zip
+                    #sudo ./aws/install
+                    sudo wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.zip -P /opt/
+                    sudo unzip /opt/apache-tomcat-9.0.70.zip -C .
                     '''
                 }
             }
