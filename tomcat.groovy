@@ -38,7 +38,7 @@ pipeline {
                 withCredentials([sshUserPrivateKey(credentialsId: 'tommy', keyFileVariable: 'tommy', usernameVariable: 'ubuntu')]) {
 
                     sh '''
-                    sudo ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@13.54.95.223
+                    ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@13.54.95.223
 
                     '''
                 }
