@@ -40,7 +40,7 @@ pipeline {
                     sh '''
                     ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@54.206.228.25<<EOF
                     sudo apt-get update -y
-                    
+                    ls /
                     '''
                 }
             }
