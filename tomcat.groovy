@@ -19,7 +19,7 @@ pipeline {
                  '''
             }
         }
-        stage('Copy-S3'){
+        stage('copy-s3'){
             sh '''
             sudo apt-get update -y
             sudo apt-get install unzip -y
