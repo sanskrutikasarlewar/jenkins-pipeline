@@ -49,8 +49,8 @@ pipeline {
                     #sudo unzip apache-tomcat-8.5.85.zip /mnt/
                     sudo chmod +x /mnt/apache-tomcat-8.5.85/bin/*
                     sudo sh /mnt/apache-tomcat-8.5.85/bin/shutdown.sh
-                    sudo cp -rv student-${BUILD_ID}.war studentapp
-                    sudo cp -rv studentapp /mnt/apache-tomcat-8.5.85/webapp/
+                    sudo cp -rv student-${BUILD_ID}.war studentapp.war
+                    sudo cp -rv studentapp.war /mnt/apache-tomcat-8.5.85/webapp/
                     sudo sh /mnt/apache-tomcat-8.5.85/bin/startup.sh
                     '''
                 }
