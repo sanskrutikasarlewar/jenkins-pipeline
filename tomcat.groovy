@@ -38,7 +38,7 @@ pipeline {
                 withCredentials([sshUserPrivateKey(credentialsId: 'tommy', keyFileVariable: 'tommy', usernameVariable: 'ubuntu')]) {
 
                     sh '''
-                    ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@54.206.228.25<<EOF
+                    ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@54.79.74.202<<EOF
                     sudo apt-get update -y
                     ls /
                     #sudo apt-get install unzip git -y
