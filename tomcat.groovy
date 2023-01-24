@@ -38,7 +38,7 @@ pipeline {
                 withCredentials([sshUserPrivateKey(credentialsId: 'tommy', keyFileVariable: 'tommy', usernameVariable: 'ubuntu')]) {
 
                     sh '''
-                    ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@54.79.74.202<<EOF
+                    ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@13.211.98.191<<EOF
                     sudo apt-get update -y
                     sudo apt-get install default-jre -y
                     sudo apt-get install default-jdk -y
