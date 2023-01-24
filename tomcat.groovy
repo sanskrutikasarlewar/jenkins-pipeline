@@ -21,7 +21,7 @@ pipeline {
         }
         stage('copy-s3'){
             steps{
-                sh '''
+                sh ''' 
                 sudo apt-get update -y
                 #sudo apt-get install unzip -y
                 #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -40,7 +40,8 @@ pipeline {
                     sh '''
                     ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@54.79.74.202<<EOF
                     sudo apt-get update -y
-                    ls /
+                    sudo apt-get install default-jre -y
+                    sudo apt-get install default-jdk -y
                     #sudo apt-get install unzip git -y
                     #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
                     #unzip awscliv2.zip
