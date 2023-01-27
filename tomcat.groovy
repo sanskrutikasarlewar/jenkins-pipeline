@@ -47,11 +47,11 @@ pipeline {
                     sudo apt-get update -y
                     sudo apt-get install default-jre -y
                     sudo apt-get install default-jdk -y
-                    sudo apt-get install unzip git -y
-                    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-                    unzip awscliv2.zip
-                    sudo ./aws/install
-                    $PWD
+                    #sudo apt-get install unzip git -y
+                    #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+                    #unzip awscliv2.zip
+                    #sudo ./aws/install
+                    #$PWD
                     aws s3 cp s3://student-app-artifact121/student-${Version}.war .
                     curl -O https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.85/bin/apache-tomcat-8.5.85.tar.gz
                     sudo tar -xvf apache-tomcat-8.5.85.tar.gz -C /opt/
