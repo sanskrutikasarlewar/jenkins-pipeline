@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        node ('bigboss-agent')
+        node ('agent')
     }
     stages{
         stage('code-pull'){
