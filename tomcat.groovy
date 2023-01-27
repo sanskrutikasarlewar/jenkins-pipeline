@@ -23,10 +23,10 @@ pipeline {
             steps{
                 sh ''' 
                 sudo apt-get update -y
-                sudo apt-get install unzip -y
-                curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-                unzip awscliv2.zip
-                sudo ./aws/install
+                #sudo apt-get install unzip -y
+                #curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+                #unzip awscliv2.zip
+                #sudo ./aws/install
                 aws s3 ls
                 sudo mv /home/ubuntu/workspace/Tomcat-pipe/target/studentapp-2.2-SNAPSHOT.war /tmp/student-${BUILD_ID}.war
                 aws s3 cp /tmp/student-${BUILD_ID}.war s3://student-app-artifact121
