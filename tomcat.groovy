@@ -67,5 +67,16 @@ pipeline {
                 }
             }
         }
-    }   
+    } 
+    post{
+        always{
+            echo "I will always say Hello again"
+        }
+        failure{
+            echo "I am failed"
+        }
+        success{
+            echo "I am moving towards success"
+        }
+    }  
 }
