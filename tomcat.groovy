@@ -39,7 +39,7 @@ pipeline {
 
 
                     sh '''
-                    ssh -i ${tomcat} -o StrictHostKeyChecking=no ubuntu@3.26.23.69<<EOF
+                    ssh -i ${tomcat} -o StrictHostKeyChecking=no ubuntu@3.26.43.172<<EOF
                     sudo apt-get update -y
                     sudo apt-get install default-jre -y
                     sudo apt-get install default-jdk -y
