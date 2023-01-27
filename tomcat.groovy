@@ -35,10 +35,11 @@ pipeline {
         }
         stage('tomcat-server-build'){
             steps{
-                withCredentials([sshUserPrivateKey(credentialsId: 'tommy', keyFileVariable: 'tommy', usernameVariable: 'ubuntu')]) {
+                withCredentials([sshUserPrivateKey(credentialsId: 'Adminn', keyFileVariable: 'tomcat', usernameVariable: 'ubuntu')]) {
+
 
                     sh '''
-                    ssh -i ${tommy} -o StrictHostKeyChecking=no ubuntu@3.27.82.187<<EOF
+                    ssh -i ${tomcat} -o StrictHostKeyChecking=no ubuntu@3.27.82.187<<EOF
                     sudo apt-get update -y
                     sudo apt-get install default-jre -y
                     sudo apt-get install default-jdk -y
