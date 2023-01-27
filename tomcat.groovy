@@ -15,6 +15,10 @@ pipeline {
             }
         }
         stage('code-build'){
+            input {
+                mesage "Do you want to continue??"
+                ok "Yes we should"
+            }
             steps {
                 sh '''
                 sudo apt-get update -y
@@ -43,7 +47,7 @@ pipeline {
 
 
                     sh '''
-                    ssh -i ${tomcat} -o StrictHostKeyChecking=no ubuntu@3.26.43.172<<EOF
+                    ssh -i ${tomcat} -o StrictHostKeyChecking=no ubuntu@3.27.83.109<<EOF
                     sudo apt-get update -y
                     sudo apt-get install default-jre -y
                     sudo apt-get install default-jdk -y
