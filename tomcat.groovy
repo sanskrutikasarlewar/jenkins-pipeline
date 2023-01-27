@@ -16,7 +16,7 @@ pipeline {
         }
         stage('code-build'){
             input {
-                mesage "Do you want to continue??"
+                message "Do you want to continue??"
                 ok "Yes we should"
             }
             steps {
